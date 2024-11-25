@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Reservation</title>
+  <style>
+    body {
+      background-image: linear-gradient(to right, #001231, #000000);
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .form-container {
+      max-width: 600px;
+      width: 100%;
+      padding: 40px;
+      background-color: #001231be;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ff6b6b;
+      font-weight: bold;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #ff6b6b;
+    }
+    
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #cccccc28;
+      border-radius: 4px;
+      background-color: #e1d9ff24;
+      color: #f6f1f1;
+    }
+    
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #cccccc28;
+      border-radius: 4px;
+      background-color: #e1d9ff24; 
+      color: #ffffff;
+    }
+
+    select option {
+      background-color: #001231be;
+      color: #ffffff; 
+    }
+
+    select:focus {
+      border-color: #ff6b6b;
+      background-color: #cccccc28;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+    
+    button {
+      background-color: #ff6b6b;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+      background-color: #e65c5c;
+    }
+    
+    .cancel-link {
+      color: #ff6b6b;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    
+    .cancel-link:hover {
+      color: #e65c5c;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Reserva</h1>
+    <form action="procesar_formulario.php" method="POST">
+      <div class="form-group">
+        <label for="ciudad_salida">Ciudad de salida:</label>
+        <input type="text" id="ciudad_salida" name="ciudad_salida" required>
+      </div>
+      <div class="form-group">
+        <label for="ciudad_llegada">Ciudad de llegada:</label>
+        <input type="text" id="ciudad_llegada" name="ciudad_llegada" required>
+      </div>
+      <div class="form-group">
+        <label for="fecha_salida">Fecha de salida:</label>
+        <input type="date" id="fecha_salida" name="fecha_salida" required>
+      </div>
+      <div class="form-group">
+        <label for="fecha_regreso">Fecha de regreso:</label>
+        <input type="date" id="fecha_regreso" name="fecha_regreso" required>
+      </div>
+      <div class="form-group">
+        <label for="numero_pasajeros">Número de personas:</label>
+        <select id="numero_pasajeros" name="numero_pasajeros" required>
+          <option value="">Selecciona</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="clase">Clase en vuelo:</label>
+        <select id="clase" name="clase" required>
+          <option value="">Selecciona</option>
+          <option value="economy">Económica</option>
+          <option value="business">Business</option>
+          <option value="first">Primera</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="calificacion_hotel">Calificación hotel:</label>
+        <select id="calificacion_hotel" name="calificacion_hotel" required>
+          <option value="">Selecciona</option>
+          <option value="11">1 estrella</option>
+          <option value="22">2 estrella</option>
+          <option value="33">3 estrella</option>
+          <option value="44">4 estrella</option>
+          <option value="55">5 estrella</option>
+        </select>
+      </div>
+      <div class="form-actions">
+        <button type="submit">Reservar</button>
+        <a href="#" class="cancel-link">Cancelar</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const flightReservationForm = document.getElementById('flight-reservation-form');
+
+    flightReservationForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const departureCity = document.getElementById('departure-city').value;
+      const arrivalCity = document.getElementById('arrival-city').value;
+      const departureDate = document.getElementById('departure-date').value;
+      const returnDate = document.getElementById('return-date').value;
+      const passengers = document.getElementById('passengers').value;
+      const travelClass = document.getElementById('class').value;
+
+      // Aquí puedes agregar la lógica de reserva de vuelo
+      console.log('Ciudad de salida:', departureCity);
+      console.log('Ciudad de llegada:', arrivalCity);
+      console.log('Fecha de salida:', departureDate);
+      console.log('Fecha de regreso:', returnDate);
+      console.log('Número de pasajeros:', passengers);
+      console.log('Clase:', travelClass);
+      // Redirigir al usuario a la página de confirmación de reserva o mostrar un mensaje de éxito
+    });
+  </script>
+</body>
+</html>

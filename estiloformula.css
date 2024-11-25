@@ -1,0 +1,91 @@
+
+    body {
+      background-image: linear-gradient(to right, #281036, #000000);
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .login-container {
+      max-width: 400px;
+      width: 100%;
+      padding: 40px;
+      background-color: #21113f;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ff6b6b;
+      font-weight: bold;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #ff6b6b;
+    }
+    
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #452ba3;
+      color: #333;
+    }
+    
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+    
+    button {
+      background-color: #ff6b6b;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+      background-color: #e65c5c;
+    }
+    
+    .forgot-password {
+      color: #ff6b6b;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    
+    .forgot-password:hover {
+      color: #e65c5c;
+    }
+    
+    .register-link {
+      text-align: center;
+      margin-top: 20px;
+      color: #ff6b6b;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    
+    .register-link:hover {
+      color: #e65c5c;
+    }
