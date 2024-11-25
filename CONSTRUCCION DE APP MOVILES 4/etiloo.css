@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+    --primary-color: #00040b;
+    --primary-light: #a0b3e5;
+    --orange-color: #f35405;
+    --button-bg: #f35405;
+    --button-hover-bg: #e84300;
+    --text-color: #000;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #00040b;
+    color: #eee;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1000;
+}
+
+.nav-bar.active {
+    background-color: var(--primary-color);
+    box-shadow: 1px 1px 2px #a0b3e5;
+}
+
+.content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1.6rem 1rem;
+}
+
+.nav-bar .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav-bar .site-logo {
+    padding: 0.5rem;
+}
+
+.nav-bar .site-logo .logo-link {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: #fff;
+    border-top: 4px solid #fff;
+}
+
+.nav-bar .navigation {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.nav-bar .navigation .link a {
+    padding: 0.25rem 0.5rem;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #fff;
+    border-top: 1px solid transparent;
+    transition: all 0.6s;
+}
+
+.nav-bar .navigation .link:hover a {
+    color: #f35405;
+    border-top: 1px solid #f35405;
+}
+
+.home {
+    background: linear-gradient(to top, #00040b, #00040bbb), url(imagenes/logopagina.jpg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.home .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.home .content h1 {
+    font-size: 56px;
+    line-height: 68px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+    background-image: url(./assets/ox.jpg);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    max-width: 450px;
+}
+
+.home .content h4 {
+    font-size: 26px;
+    line-height: 26px;
+    font-weight: 300;
+    color: #a0b3e5;
+}
+
+.btn-explore {
+    width: fit-content;
+    background-color: #f35405cc;
+    padding: 0.9rem 2.4rem;
+    padding-left: 1rem;
+    font-size: 16px;
+    line-height: 16px;
+    color: #eee;
+    border: 2px solid #f35405cc;
+    margin-top: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 1s;
+}
+
+.btn-explore:hover {
+    border: 2px solid #f35405;
+    background-color: #f35405;
+    padding-left: 2rem;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+section .content {
+    width: 100%;
+    max-width: 1300px;
+}
+
+section .heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 2rem 0rem;
+}
+
+section .heading .title {
+    text-transform: capitalize;
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    color: #fff;
+    text-align: center;
+}
+
+section .heading .subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    color: #eee;
+}
+
+.destinos {
+    background-image: url('imagenes/destinos-bg.jpg'); /* Cambia esto por la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 0; /* Espaciado superior e inferior */
+}
+
+.destinos .items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    width: 100%;
+}
+
+.destinos .items .card {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
+    padding: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s; /* Añadido efecto de transformación */
+    position: relative;
+    overflow: hidden;
+}
+
+.destinos .items .card:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro al pasar el mouse */
+    color: #fff; /* Cambia el color del texto */
+    transform: scale(1.05); /* Añadido efecto de zoom */
+}
+
+.destinos .items .card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.destinos .items .card:hover h4, .destinos .items .card:hover p {
+    opacity: 0; /* Hacer el texto invisible al pasar el cursor */
+    transition: opacity 0.3s;
+}
+
+.destinos .items .card h4, .destinos .items .card p {
+    padding: 0.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: #000; /* Color del texto oscuro */
+    transition: opacity 0.3s; /* Añadida transición para opacidad */
+}
+
+.destinos .items .card .btn-reserva {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--button-bg);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.destinos .items .card .btn-reserva:hover {
+    background-color: var(--button-hover-bg);
+    transform: scale(1.1);
+}
+
+.contact .content {
+    padding: 3rem 1rem;
+    background-color: var(--primary-color);
+}
+
+.contact .item form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact .item .input {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-contact {
+    background-color: #f35405;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-contact:hover {
+    background-color: #e84300;
+}
+
+.footer {
+    background-color: var(--primary-color);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer h4 {
+    color: #fff;
+}
+
+.footer p {
+    color: #aaa;
+}
+
+.booking-form {
+    padding: 60px 0;
+    background-color: #f3f3f3;
+}
+
+.booking-form .content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.booking-form .input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+}
